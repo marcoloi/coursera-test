@@ -6,21 +6,25 @@ angular.module('LunchCheck', [])
 
 LunchCheckController.$inject = ['$scope'];
 function lunchCheckController($scope) {
+  //Properties initialization
   $scope.disheslist = "";
   $scope.lunchmessage= "";
-  $scope.num= 0;
+
 
 
   $scope.CheckLunch = function () {
-
+    //Dishes counter initialization
     var numItem = 0;
+
+    // Check if textbox is empty
     if ($scope.disheslist == "") {
       $scope.lunchmessage = "Please enter data first";
       return;
     }
+    //Check the number of dishes
     numItem = $scope.disheslist.split(',').length;
 
-    $scope.num = numItem;
+    //Message generation on dishes number
     switch (numItem) {
         case 1:
         case 2:
