@@ -1,3 +1,5 @@
+// Developed by Marco Loi
+// marco.loi@tetralab.eu
 (function () {
 'use strict';
 
@@ -5,13 +7,15 @@ angular.module('LunchCheck', [])
 .controller('LunchCheckController', lunchCheckController);
 
 LunchCheckController.$inject = ['$scope'];
+
 function lunchCheckController($scope) {
-  //Properties initialization
+
+  // Properties initialization
   $scope.disheslist = "";
   $scope.lunchmessage= "";
 
 
-
+  // the function that check the dishes list and generates the message
   $scope.CheckLunch = function () {
     //Dishes counter initialization
     var numItem = 0;
@@ -30,7 +34,7 @@ function lunchCheckController($scope) {
         case 2:
         case 3:
           $scope.lunchmessage = "Enjoy!";
-            break;
+          break;
         default:
           $scope.lunchmessage = "Too much!";
     };
